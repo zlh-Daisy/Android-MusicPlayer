@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/play_inOrder"
+        android:icon="@drawable/ic_forward"
+        android:title="顺序播放"/>
+
+    <item
+        android:id="@+id/play_random"
+        android:icon="@drawable/ic_shuffle"
+        android:title="随机播放"/>
+
+    <item
+        android:id="@+id/play_repeatOne"
+        android:icon="@drawable/ic_repeat_one"
+        android:title="单曲循环"/>
+
+</menu>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#eeeeee">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></SearchView>
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/viewBar"
+        android:background="#eeeeee"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="歌曲列表"
+            android:textSize="18.0sp"
+            android:drawableTop="@drawable/ic_queue_music_blue_24dp"/>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="当前播放"
+            android:textSize="18.0sp"
+            android:drawableTop="@drawable/ic_music_note_blue_24dp"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/cursor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="-20dp"
+        android:scaleType="matrix"
+        android:src="@drawable/ic_remove_blue_40dp" />
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:id="@+id/vPager"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation">
+    </android.support.v4.view.ViewPager>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/image_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_music_video_blue_24dp"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp">
+            
+            <SeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/processbar"
+                android:thumb="@drawable/shape_point_circle"
+                android:thumbOffset="0dip"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currSongName"
+                android:text="请选择播放曲目"
+                android:layout_below="@+id/seekbar"
+                android:layout_marginLeft="10dp" />
+
+            <ImageView
+                android:id="@+id/prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_skip_previous"
+                android:layout_toLeftOf="@+id/toPlay"
+                android:layout_below="@+id/seekbar"/>
+
+            <ImageView
+                android:id="@+id/toPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_play_arrow"
+                android:layout_toLeftOf="@+id/next"
+                android:layout_below="@+id/seekbar"/>
+
+            <ImageView
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_skip_next"
+                android:layout_below="@+id/seekbar"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/timeListening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0:00/0:00"/>
+
+            <ImageView
+                android:id="@+id/playOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_forward"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
